@@ -28,8 +28,18 @@ class SinglyLinkedList:
 
     def insert_value_before(self, node:Node, param):
         new_node = Node(param)
-        # 在一个节点之前插入一个节点？先找到这个值的节点，在一个节点之前插入一个节点。先创建这个节点，再:new_node._next = node,再把node之前的节点指向这个节点。node._before._next = new_node.问题是怎么得到之前那个节点？如果是双向链表就好了
+        # 在一个节点之前插入一个节点？先找到这个值的节点，在一个节点之前插入一个节点。先创建这个节点，再:new_node._next = node,再把node之前的节点指向这个节点。node._before._next = new_node.问题是怎么得到之前那个节点？如果是双向链表就好了。
+        # 要找到第8个节点，只能用for循环，直到node._next = 现在这个找到的第几个节点。还要分几种情况，这个节点是头节点呢？
+        if self._head == node:
+            new_node._next = node
+            self._head = new_node
 
+        else:
+            current = self._head
+            while current._next != node:
+                current = current._next ˚
+            current._next = new_node
+            new_node._next = node
         # 把原来第8个节点的_next指向这个新的节点，如何找到第8个节点？如果是双向链表就可以利用现在找到的第9个节点。
 
     def insert_value_to_head(self, value):
