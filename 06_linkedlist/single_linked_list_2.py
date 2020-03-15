@@ -37,7 +37,7 @@ class SinglyLinkedList:
         else:
             current = self._head
             while current._next != node:
-                current = current._next ˚
+                current = current._next
             current._next = new_node
             new_node._next = node
         # 把原来第8个节点的_next指向这个新的节点，如何找到第8个节点？如果是双向链表就可以利用现在找到的第9个节点。
@@ -48,7 +48,9 @@ class SinglyLinkedList:
         new_node._next = self._head
         self._head = new_node
 
-
+    def delete_by_value(self, param):
+        # 删除一个节点，给定一个值，先调函数找到这个节点，然后把它之后的节点node = 这个节点之前的节点. _next。如果找到这个节点呢，之前函数都已经写好了。
+        node = self.find_by_value(param)
 
 
 if __name__ == "__main__":
@@ -57,13 +59,16 @@ if __name__ == "__main__":
         l.insert_value_to_head(i)
     node9 = l.find_by_value(9)
     print(node9.data)
-    print(l)
     l.insert_value_before(node9, 20)
-    print(l)
     l.insert_value_before(node9, 16)
-    print(l)
     l.insert_value_before(node9, 16)
+    node16 = l.find_by_value(16)
+    print(node16.data)
     l.delete_by_value(16)
+
+
+""" 
+    
     print(l)
     node11 = l.find_by_index(3)
     print(node11)
@@ -73,3 +78,4 @@ if __name__ == "__main__":
     print(l)
     for value in l:
         print(value)
+"""
