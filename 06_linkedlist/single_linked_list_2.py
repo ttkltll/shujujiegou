@@ -20,15 +20,6 @@ class SinglyLinkedList:
         self._head = None
 
 
-    def insert_value_to_head(self, value: int):
-        new_node = Node(value)
-        self.insert_node_to_head(new_node)
-
-    def insert_node_to_head(self, new_node: Node):
-        if new_node:
-            new_node._next = self._head
-            self._head = new_node
-
     def find_by_value(self, value: int) -> Optional[Node]:
         p = self._head
         while p and p.data != value:
@@ -37,7 +28,19 @@ class SinglyLinkedList:
 
     def insert_value_before(self, node9, param):
         new_node = Node(param, node9)
-        # 把原来第8个节点的_next指向这个新的节点，如何找到第8个节点？
+        # 把原来第8个节点的_next指向这个新的节点，如何找到第8个节点？如果是双向链表就可以利用现在找到的第9个节点。
+
+    def insert_value_to_head(self, i):
+        # 插入第一个
+        new_node = Node(i, None)
+        self._head = new_node
+        new_node._next =
+
+        # 第二个
+        new_node2 = Node(2, new_node1)
+        new_node3 = Node(3, new_node2)
+
+
 
 
 if __name__ == "__main__":
