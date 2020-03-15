@@ -26,19 +26,16 @@ class SinglyLinkedList:
             p = p._next
         return p
 
-    def insert_value_before(self, node9, param):
-        new_node = Node(param, node9)
+    def insert_value_before(self, node:Node, param):
+        new_node = Node(param)
+
         # 把原来第8个节点的_next指向这个新的节点，如何找到第8个节点？如果是双向链表就可以利用现在找到的第9个节点。
 
-    def insert_value_to_head(self, i):
+    def insert_value_to_head(self, value):
         # 插入第一个
-        new_node = Node(i, None)
+        new_node = Node(value)
+        new_node._next = self._head
         self._head = new_node
-        new_node._next =
-
-        # 第二个
-        new_node2 = Node(2, new_node1)
-        new_node3 = Node(3, new_node2)
 
 
 
